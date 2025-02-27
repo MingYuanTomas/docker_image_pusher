@@ -1,1 +1,1 @@
-sonarqube:lts-community
+sonarqube:9.9.8-community
