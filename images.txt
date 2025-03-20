@@ -1,1 +1,1 @@
-grafana/grafana:latest
+ docker.elastic.co/elasticsearch/elasticsearch-wolfi:8.17.3
