@@ -1,1 +1,1 @@
- docker.elastic.co/elasticsearch/elasticsearch-wolfi:8.17.3
+docker pull docker.elastic.co/kibana/kibana:8.17.3
