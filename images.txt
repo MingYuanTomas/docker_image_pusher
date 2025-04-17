@@ -1,1 +1,1 @@
-apache/skywalking-ui:9.4.0
+kibana:7.9.2
