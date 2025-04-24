@@ -1,1 +1,1 @@
-quay.io/projectquay/clair
+registry.redhat.io/rhel8/postgresql-15
