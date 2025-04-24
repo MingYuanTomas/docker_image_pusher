@@ -1,1 +1,1 @@
-kibana:7.9.2
+quay.io/projectquay/clair
