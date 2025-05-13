@@ -1,1 +1,1 @@
-quay.io/prometheus/blackbox-exporter:v0.25.0
+grafana/grafana:11.2.0
