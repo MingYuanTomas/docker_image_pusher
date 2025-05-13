@@ -1,1 +1,1 @@
-quay.io/brancz/kube-rbac-proxy:v0.18.1
+ghcr.io/jimmidyson/configmap-reload:v0.13.1
