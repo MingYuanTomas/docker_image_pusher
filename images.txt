@@ -1,1 +1,1 @@
---platform=linux/arm64 bitnami/mysql:5.7.41-debian-11-r17  
+redis7.4.5
