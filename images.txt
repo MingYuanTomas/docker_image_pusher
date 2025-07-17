@@ -1,1 +1,1 @@
-openjdk:26-jdk
+openjdk:25-ea-19
