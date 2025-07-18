@@ -1,1 +1,1 @@
-openjdk:25-ea-19
+bitnami/mysql:5.7.41
