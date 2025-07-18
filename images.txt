@@ -1,1 +1,1 @@
- --platform=arm bitnami/mysql:5.7.41
+ --platform=arm64 bitnami/mysql:5.7.41
