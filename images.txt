@@ -1,1 +1,1 @@
---platfrom=linux/arm/v5 redis:7.4.5
+--platform=linux/arm/v5 redis:7.4.5
