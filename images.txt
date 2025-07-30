@@ -1,1 +1,1 @@
-openjdk:21-oraclelinux8
+--platform=linux/arm64/v8 openjdk:21-oraclelinux8
