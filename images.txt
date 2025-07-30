@@ -1,1 +1,1 @@
-openjdk:21-rc-oraclelinux8
+openjdk:21-oraclelinux8
