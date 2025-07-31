@@ -1,1 +1,1 @@
---platform=linux/arm64/v8 kibana:7.17.4
+ kibana:7.17.4
