@@ -1,1 +1,1 @@
-sonarsource/sonar-scanner-cli:10.0.0.1370_5.0.1
+busybox:unstable-glibc
