@@ -1,1 +1,1 @@
-openjdk:26-ea-jdk
+kibana:7.17.4
