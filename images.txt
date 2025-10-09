@@ -1,1 +1,1 @@
-kibana:7.17.4  --platform=linux/arm64
+--platform=linux/arm64  kibana:7.17.4
