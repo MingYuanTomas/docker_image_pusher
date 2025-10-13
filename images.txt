@@ -1,1 +1,1 @@
-zlmediakit/zlmediakit:master
+ringcentral/jdk:11
