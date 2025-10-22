@@ -1,1 +1,1 @@
-registry.k8s.io/hpa-example
+eipwork/kuboard:v3
