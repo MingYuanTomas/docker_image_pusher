@@ -1,1 +1,1 @@
-docker.elastic.co/kibana/kibana:9.2.0
+curlimages/curl:8.8.0
