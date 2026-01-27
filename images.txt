@@ -1,1 +1,1 @@
-quay.io/argoproj/argoexec:v3.7.3
+node:12.22.8-alpine3.13
