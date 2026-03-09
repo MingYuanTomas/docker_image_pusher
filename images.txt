@@ -1,1 +1,1 @@
-gcr.io/distroless/static:nonroot
+openjdk:8-jre
