@@ -1,1 +1,1 @@
-eclipse-temurin:8-jdk
+ghcr.io/openclaw/openclaw:latest
