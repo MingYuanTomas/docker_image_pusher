@@ -1,1 +1,1 @@
-ghcr.io/openclaw/openclaw:main-amd64
+ghcr.io/openclaw/openclaw:main-arm64
