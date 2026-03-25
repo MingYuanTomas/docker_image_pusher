@@ -1,1 +1,1 @@
-node:24-bookworm@sha256:3a09aa6354567619221ef6c45a5051b671f953f0a1924d1f819ffb236e520e6b
+openeuler/openclaw:2026.3.2-oe2403sp3
