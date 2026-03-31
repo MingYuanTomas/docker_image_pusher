@@ -1,1 +1,1 @@
-ghcr.io/eclipse-theia/theia-ide/theia-ide:latest
+theiaide/theia-go:next
