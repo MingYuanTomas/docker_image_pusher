@@ -1,1 +1,1 @@
-theiaide/theia-go:next
+nousresearch/hermes-agent
