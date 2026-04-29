@@ -1,1 +1,1 @@
-nousresearch/hermes-agent
+eclipse-temurin:21-jdk-ubi10-minimal
