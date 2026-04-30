@@ -1,1 +1,1 @@
-eclipse-temurin:21-jdk-ubi10-minimal
+ flink:1.18.0-scala 2.12-java17
