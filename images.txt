@@ -1,1 +1,1 @@
- nousresearch/hermes-agent
+zookeeper:3.8.6
