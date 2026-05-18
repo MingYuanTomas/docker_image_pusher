@@ -1,1 +1,1 @@
-nginx:stable-alpine3.23-perl
+nginx:stable-alpine3.23-perl  --platform=linux/arm64/v8
