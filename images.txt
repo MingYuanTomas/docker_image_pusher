@@ -1,1 +1,1 @@
-grafana/grafana:13.1.0-25469333600
+nginx:stable-alpine3.23-perl
