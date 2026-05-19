@@ -1,1 +1,1 @@
-openresty/openresty:restyrepo
+nginx:1.31-alpine-perl
