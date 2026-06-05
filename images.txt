@@ -1,1 +1,1 @@
-nginx:1.31-alpine-perl
+golang:1.26.3
