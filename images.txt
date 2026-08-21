@@ -1,1 +1,1 @@
---platform=linux/arm64  openresty/openresty:1.31.1.1-bookworm-fat
+redis:8.8.2
