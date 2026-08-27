@@ -1,1 +1,1 @@
---platform=linux/arm64/v8 redis:8.8.2
+calico/kube-controllers:v3.8.9
