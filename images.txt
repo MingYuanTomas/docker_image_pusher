@@ -1,1 +1,1 @@
-calico/kube-controllers:v3.8.9
+matrixdotorg/synapse:v1.160.0rc1
