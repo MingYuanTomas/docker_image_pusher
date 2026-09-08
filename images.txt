@@ -1,1 +1,1 @@
-quay.io/minio/minio:RELEASE.2024-12-18T13-15-44Z
+--platform=linux/arm64 greatsql/greatsql:8.4.4-5
