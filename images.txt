@@ -1,1 +1,1 @@
---platform=linux/amd64 greatsql/greatsql:8.0.32-27
+--platform=linux/arm64 greatsql/greatsql:8.0.32-27
