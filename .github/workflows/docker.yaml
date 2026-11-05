@@ -5,7 +5,6 @@ on:
   push:
     branches: [ main ]
 
-
 env:
   ALIYUN_REGISTRY: "${{ secrets.ALIYUN_REGISTRY }}"
   ALIYUN_NAME_SPACE: "${{ secrets.ALIYUN_NAME_SPACE }}"
@@ -29,18 +28,20 @@ jobs:
     - name: Maximize build space
       uses: easimon/maximize-build-space@master
       with:
-
-        root-reserve-mb: 2048
+        root-reserve-mb: 8192
         swap-size-mb: 128
         remove-dotnet: 'true'
         remove-haskell: 'true'
-        # 如果空间还是不够用，可以把以下开启，清理出更多空间
-        # remove-android: 'true'
-        # remove-codeql: 'true'
-        build-mount-path: '/var/lib/docker/'
+        remove-android: 'true'
+        remove-codeql: 'true'
+        build-mount-path: '/var/lib/docker'
 
     - name: Restart docker
-      run: sudo service docker restart
+      run: |
+        sudo service docker restart
+        echo "=== Docker root dir & mount check ==="
+        docker info | grep -i "Docker Root Dir"
+        df -hT /var/lib/docker
 
     - name: Free up disk space complete
       run: |
@@ -51,9 +52,6 @@ jobs:
 
     - name: Checkout Code
       uses: actions/checkout@v4
-
-    - name: Docker Setup Buildx
-      uses: docker/setup-buildx-action@v3
 
     - name: Build and push image Aliyun
       run: |
@@ -67,7 +65,7 @@ jobs:
             if echo "$line" | grep -q '^\s*#'; then
                 continue
             fi
-            
+
             # 获取镜像的完整名称，例如kasmweb/nginx:1.25.3（命名空间/镜像名:版本号）
             image=$(echo "$line" | awk '{print $NF}')
             # 将@sha256:等字符删除
@@ -84,7 +82,7 @@ jobs:
             # 获取镜像名例如nginx
             image_name=$(echo "$image_name_tag" | awk -F':' '{print $1}')
             echo "image_name: $image_name"
-            
+
             # 如果镜像存在于数组中，则添加temp_map
             if [[ -n "${temp_map[$image_name]}" ]]; then
                  # 如果temp_map已经存在镜像名，判断是不是同一命名空间
@@ -95,17 +93,17 @@ jobs:
             else
                 # 存镜像的命名空间
                 temp_map[$image_name]=$name_space
-            fi       
+            fi
         done < images.txt
-        
-        
+
+
         while IFS= read -r line || [ -n "$line" ]; do
             # 忽略空行与注释
             [[ -z "$line" ]] && continue
             if echo "$line" | grep -q '^\s*#'; then
                 continue
             fi
-        
+
             echo "docker pull $line"
             docker pull $line
             platform=$(echo "$line" | awk -F'--platform[ =]' '{if (NF>1) print $2}' | awk '{print $1}')
@@ -126,7 +124,7 @@ jobs:
             name_space=$(echo "$image" | awk -F'/' '{if (NF==3) print $2; else if (NF==2) print $1; else print ""}')
             # 获取镜像名例  例如nginx
             image_name=$(echo "$image_name_tag" | awk -F':' '{print $1}')
-        
+
             name_space_prefix=""
             # 如果镜像名重名
             if [[ -n "${duplicate_images[$image_name]}" ]]; then
@@ -135,7 +133,7 @@ jobs:
                   name_space_prefix="${name_space}_"
                fi
             fi
-            
+
             # 将@sha256:等字符删除
             image_name_tag="${image_name_tag%%@*}"
             new_image="$ALIYUN_REGISTRY/$ALIYUN_NAME_SPACE/$platform_prefix$name_space_prefix$image_name_tag"
@@ -149,9 +147,14 @@ jobs:
             echo "=============================================================================="
             docker rmi $image
             docker rmi $new_image
+
+            # 清理旧诊断日志和临时文件，防止根分区被写满
+            sudo find /home/runner/actions-runner -type f -name "*.log" -mmin +30 -delete 2>/dev/null || true
+            sudo rm -rf /tmp/* 2>/dev/null || true
+
             echo "磁盘空间清理完毕"
             echo "=============================================================================="
             df -hT
-            echo "=============================================================================="     
-            
+            echo "=============================================================================="
+
         done < images.txt
