@@ -1,1 +1,1 @@
-kibana:9.5.5
+kibana:9.5.5 
